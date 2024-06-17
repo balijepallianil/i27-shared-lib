@@ -1,7 +1,7 @@
 import com.i27academy.builds.Docker
 
 def call(Map pipelineParams) {
-    Docker docker - new Docker(this)
+    Docker docker = new Docker(this)
 
 pipeline {
     agent {
@@ -44,7 +44,7 @@ pipeline {
     }
 
     environment {
-        APPLICATION_NAME = {pipelineParams.appName}
+        APPLICATION_NAME = "${pipelineParams.appName}"
         //APPLICATION_NAME = "product"
         POM_VERSION = readMavenPom().getVersion()
         POM_PACKAGING = readMavenPom().getPackaging()
