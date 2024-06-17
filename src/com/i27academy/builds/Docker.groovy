@@ -6,7 +6,7 @@ class Docker {
             this.jenkins = jenkins
     }
 
-    def add(irstNumber, secondNumber) {
+    def add(firstNumber, secondNumber) {
      return firstNumber+secondNumber
     }
 
