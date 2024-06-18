@@ -1,4 +1,4 @@
-import com.i27academy.builds.K8s
+import com.i27academy.k8s.K8s
 
 def call(Map pipelineParams) {
     K8s k8s = new K8s(this)
@@ -39,7 +39,7 @@ pipeline {
             }
             steps {
                 script {
-                    k8s.buildApp()
+                    k8s.buildApp("${env.APPLICATION_NAME}")
                 }
 
             }
