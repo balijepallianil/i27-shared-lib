@@ -1,7 +1,7 @@
 import com.i27academy.builds.K8s
 
 def call(Map pipelineParams) {
-    K8s K8s = new K8s(this)
+    K8s k8s = new K8s(this)
 pipeline {
     agent {
         label 'k8s-slave'
@@ -39,7 +39,7 @@ pipeline {
             }
             steps {
                 script {
-                    buildApp().call()
+                    k8s.buildApp()
                 }
 
             }
@@ -54,7 +54,7 @@ pipeline {
             }            
             steps {
                 script  {
-                    dockerBuildandPush().call()
+                    k8s.dockerBuildandPush()
                 }
 
             }
