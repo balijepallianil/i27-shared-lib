@@ -2,10 +2,10 @@ import com.i27academy.k8s.K8s
 
 def call(Map pipelineParams) {
     K8s k8s = new K8s(this)
-pipeline {
-    agent {
-        label 'k8s-slave'
-    }
+    pipeline {
+        agent {
+            label 'k8s-slave'
+        }
     parameters {
         choice (name: 'buildOnly',
                choices: 'no\nyes',
