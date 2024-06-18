@@ -22,7 +22,7 @@ pipeline {
         jdk 'JDK-17'
     }
     environment {
-        APPLICATION_NAME = "eureka"
+        APPLICATION_NAME = "${pipelineParams.appName}"
         POM_VERSION = readMavenPom().getVersion()
         POM_PACKAGING = readMavenPom().getPackaging()
         DOCKER_HUB = "docker.io/i27anilb3"
